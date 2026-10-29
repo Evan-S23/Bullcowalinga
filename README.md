@@ -1,4 +1,6 @@
 # Bullcowalinga
-Evil and powerful code \n
-Code is run from mainGuessing \n
+Evil and powerful code 
+
+Code is run from mainGuessing 
+
 color coded exactly as wordle(NYT) is.
