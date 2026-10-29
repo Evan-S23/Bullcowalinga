@@ -15,7 +15,7 @@ public class GuessChecker{
       pass = allDiff.check(""+targetNumber,z,false);
     }
     System.out.println("Your task is to guess a 4 digit number. \n The number is between 0000 and 9999.\n Inputs of three digits or less are automatically converted to four digits.");
-    
+    int guesses = 0;
     while(!victory){
     System.out.print("Input your guess: ");
     String test = sc.next();
@@ -28,8 +28,9 @@ public class GuessChecker{
       }
     }
     victory = comparer.compare(input, number, z);
+    guesses++;
     }
-    System.out.println("Congratulations! You guessed the correct number.");
+    System.out.println("Congratulations! You guessed the correct number in " + guesses + " guesses.");
     sc.close();
   }
 }
