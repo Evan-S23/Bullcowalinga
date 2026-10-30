@@ -1,4 +1,3 @@
-package Bullcowalinga;
 import java.util.Scanner;
 public class GuessChecker{
   String number;
