@@ -20,7 +20,7 @@ public class comparer {
             wordle[i] = YELLOW + "X" + RESET;
             break;
         }
-        else if(guess.charAt(i) != target.charAt(j) && j == guess.length() - 1 && wordle[i] == null){
+        else if(j == guess.length() - 1 && wordle[i] == null){
             wordle[i] = RED + "X" + RESET;
             break;
         }
