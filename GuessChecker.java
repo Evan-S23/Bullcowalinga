@@ -13,7 +13,7 @@ public class GuessChecker{
     System.out.print("Input the number of digits you wish to play with: ");
     while(!pass){
       try{
-        digits = Integer.parseInt(sc.next());
+        digits = Integer.parseInt(sc.nextLine());
         if(digits>0 && digits<=15){
           pass = true;
         }
@@ -37,13 +37,13 @@ public class GuessChecker{
     int guesses = 0;
     while(!victory){
     System.out.print("Input your guess: ");
-    String test = sc.next();
+    String test = sc.nextLine();
     pass = false;
     while(!pass){
       pass = allDiff.check(test,z,true,digits);
       if(!pass){
       System.out.print("Input a valid guess(between 0 and " + (int)(Math.pow(10,digits)-1) + "): ");
-      test = sc.next();
+      test = sc.nextLine();
       }
     }
     victory = comparer.compare(input, number, z);
