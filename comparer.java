@@ -1,5 +1,3 @@
-package Bullcowalinga;
-
 public class comparer {
     public static boolean compare(String guess, String target,GuessChecker z){
     String bank = target;
