@@ -1,4 +1,3 @@
-package Bullcowalinga;
 public class allDiff {
     public static boolean check(String n,GuessChecker l,boolean type,int digits){
         try{
