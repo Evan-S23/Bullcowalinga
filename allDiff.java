@@ -3,6 +3,7 @@ public class allDiff {
         try{
         int b = Integer.parseInt(n);
         if(!(b>=0 && b<=Math.pow(10,digits)-1)){return false;}
+        if(!n.matches("[^\\s]*")){return false;}
         if(n.length()<digits){
             int needed = digits-n.length();
             while(needed>0){
