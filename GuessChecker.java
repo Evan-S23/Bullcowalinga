@@ -25,9 +25,10 @@ public class GuessChecker{
         System.out.print("Input a valid number of digits: ");
       }
     }
+    pass = allDiff.check("2",z,true,digits);
     System.out.println("Your task is to guess a " + digits + " digit number. \n The number is between " + 
     String.format("%0" + digits + "d", 0) + " and " + String.format("%0" + digits + "d", (int)(Math.pow(10,digits)-1)) + 
-    ".\n Inputs of " + (digits-1) + " digits or less are automatically converted to " + digits + " digits.");
+    ".\n Inputs of " + (digits-1) + " digits or less are automatically converted to " + digits + " digits.(2->"+input+ " for "+digits+" digits)");
     pass = false;
     while(!pass){
       targetNumber = (int)(Math.random()*Math.pow(10,digits));
