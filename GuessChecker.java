@@ -10,20 +10,40 @@ public class GuessChecker{
     boolean victory = false;
     boolean pass = false;
     int targetNumber =34;
+    int digits = 4;
+    System.out.print("Input the number of digits you wish to play with: ");
     while(!pass){
-      targetNumber = (int)(Math.random()*10000);
-      pass = allDiff.check(""+targetNumber,z,false);
+      try{
+        digits = Integer.parseInt(sc.next());
+        if(digits>0 && digits<=15){
+          pass = true;
+        }
+        else{
+          System.out.print("Input a valid number of digits: ");
+        }
+      }
+      catch(NumberFormatException e){
+        System.out.print("Input a valid number of digits: ");
+      }
     }
-    System.out.println("Your task is to guess a 4 digit number. \n The number is between 0000 and 9999.\n Inputs of three digits or less are automatically converted to four digits.");
+    System.out.println("Your task is to guess a " + digits + " digit number. \n The number is between " + 
+    String.format("%0" + digits + "d", 0) + " and " + String.format("%0" + digits + "d", (int)(Math.pow(10,digits)-1)) + 
+    ".\n Inputs of " + (digits-1) + " digits or less are automatically converted to " + digits + " digits.");
+    pass = false;
+    while(!pass){
+      targetNumber = (int)(Math.random()*Math.pow(10,digits));
+      pass = allDiff.check(""+targetNumber,z,false,digits);
+    }
+    
     int guesses = 0;
     while(!victory){
     System.out.print("Input your guess: ");
     String test = sc.next();
     pass = false;
     while(!pass){
-      pass = allDiff.check(test,z,true);
+      pass = allDiff.check(test,z,true,digits);
       if(!pass){
-      System.out.print("Input a valid guess(between 0 and 9999): ");
+      System.out.print("Input a valid guess(between 0 and " + (int)(Math.pow(10,digits)-1) + "): ");
       test = sc.next();
       }
     }
